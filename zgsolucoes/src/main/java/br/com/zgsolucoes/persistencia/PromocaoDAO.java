@@ -5,7 +5,6 @@
  */
 package br.com.zgsolucoes.persistencia;
 
-import br.com.zgsolucoes.CNXJDBC;
 import br.com.zgsolucoes.PromocaoNovo;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -13,14 +12,11 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 
-
 public class PromocaoDAO {
     private static final String SQL_INSERE_PROMOCAO = "INSERT INTO promocao "
             + "(id, descricao, observacao, quantidade_ativacao, preco_final, "
             + "quantidade_paga) VALUES ( ?, ?, ?, ?, ?, ?);";
     private final String SQL_SELECIONA_PROMOCAO = "SELECT * FROM promocao";
-   
-    //private PreparedStatement pst = null;
 
     public void inserirPromocao(PromocaoNovo pro) {
         try (Connection conn = new CNXJDBC().conectar();

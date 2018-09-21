@@ -1,4 +1,4 @@
-package br.com.zgsolucoes;
+package br.com.zgsolucoes.persistencia;
 
     import java.sql.Connection;
     import java.sql.DriverManager;
