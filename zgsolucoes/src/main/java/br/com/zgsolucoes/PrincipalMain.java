@@ -16,7 +16,7 @@ public class PrincipalMain {
 
         Regex regex = new Regex();
 
-        b.criarTabelaProduto();
+        //b.criarTabelaProduto();
 
         String[] arquivo = new String[50];
         arquivo = regex.lerArquivo("Arquivo_dados_checkout.txt");
@@ -36,7 +36,16 @@ public class PrincipalMain {
 //            System.out.println("\n");
 //        }
 
-        
+        //ArrayList<Produto> ppp = teste.listarTodosProduto();
+
+//        for (int i = 0; i<50; i++){
+//            System.out.println(ppp.get(i).getId());
+//            System.out.println(ppp.get(i).getDescricao());
+//            System.out.println(ppp.get(i).getPreco());
+//            System.out.println(ppp.get(i).getPromocao());
+//            System.out.println("\n");
+//        }
+
 //        //Produto pp = new Produto(9, "AAA", new BigDecimal(3.9860), 1);
 //        //teste.inserirProduto(pp);
 //        Produto aaa = new Produto();

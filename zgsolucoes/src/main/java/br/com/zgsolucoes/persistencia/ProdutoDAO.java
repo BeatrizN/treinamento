@@ -1,7 +1,7 @@
 package br.com.zgsolucoes.persistencia;
 
 import br.com.zgsolucoes.Produto;
-import br.com.zgsolucoes.Teste;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

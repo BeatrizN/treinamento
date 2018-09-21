@@ -6,8 +6,6 @@
 package br.com.zgsolucoes.persistencia;
 
 import br.com.zgsolucoes.Produto;
-import br.com.zgsolucoes.Produtos;
-import br.com.zgsolucoes.Teste;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
