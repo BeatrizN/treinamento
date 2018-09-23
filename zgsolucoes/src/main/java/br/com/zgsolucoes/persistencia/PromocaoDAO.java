@@ -5,7 +5,7 @@
  */
 package br.com.zgsolucoes.persistencia;
 
-import br.com.zgsolucoes.PromocaoNovo;
+import br.com.zgsolucoes.entidades.PromocaoNovo;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -28,7 +28,7 @@ public class PromocaoDAO {
             pst.setBigDecimal(5, pro.getPreco_final());
             pst.setBigDecimal(6, pro.getQuantidade_paga());
             pst.executeUpdate();
-        } catch (SQLException e) {
+        } catch (Exception e) {
             e.printStackTrace();
             System.out.println("Erro ao executar o Statment " + e.toString());
         }
@@ -53,7 +53,7 @@ public class PromocaoDAO {
                 p.add(promocao);
             }
 
-        } catch (SQLException e) {
+        } catch (Exception e) {
             System.out.println("Erro ao executar o Statement" + e.toString());
         }
 

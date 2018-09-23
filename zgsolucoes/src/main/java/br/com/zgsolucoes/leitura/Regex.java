@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.com.zgsolucoes.persistencia;
+package br.com.zgsolucoes.leitura;
 
-import br.com.zgsolucoes.Produto;
+import br.com.zgsolucoes.entidades.Produto;
 
 import java.io.BufferedReader;
 import java.io.FileReader;

@@ -1,4 +1,4 @@
-package br.com.zgsolucoes;
+package br.com.zgsolucoes.entidades;
 
 import java.math.BigDecimal;
 

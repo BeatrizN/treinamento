@@ -15,7 +15,7 @@ public class CNXJDBC {
         try {
             //Class.forName("org,postgresql.Driver");
             return DriverManager.getConnection(URL, usuario, senha);
-        } catch (SQLException e) {
+        } catch (Exception e) {
             e.printStackTrace();
             throw new RuntimeException();
         }

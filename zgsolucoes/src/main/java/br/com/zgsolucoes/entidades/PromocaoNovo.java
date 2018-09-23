@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.com.zgsolucoes;
+package br.com.zgsolucoes.entidades;
     
 import java.math.BigDecimal;
 

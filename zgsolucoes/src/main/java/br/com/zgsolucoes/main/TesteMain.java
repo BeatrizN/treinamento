@@ -1,14 +1,18 @@
-package br.com.zgsolucoes;
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package br.com.zgsolucoes.main;
 
+import br.com.zgsolucoes.Bootstrap;
+import br.com.zgsolucoes.leitura.Regex;
 import br.com.zgsolucoes.persistencia.ProdutoDAO;
 import br.com.zgsolucoes.persistencia.PromocaoDAO;
-import br.com.zgsolucoes.persistencia.Regex;
-
 import java.io.IOException;
-import java.util.ArrayList;
 
-public class PrincipalMain {
-    public static void main(String[] args) throws IOException {
+public class TesteMain {
+     public static void main(String[] args) throws IOException {
 
         ProdutoDAO teste = new ProdutoDAO();
         PromocaoDAO promo = new PromocaoDAO();

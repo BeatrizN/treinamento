@@ -1,6 +1,6 @@
 package br.com.zgsolucoes.persistencia;
 
-import br.com.zgsolucoes.Produto;
+import br.com.zgsolucoes.entidades.Produto;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -26,7 +26,7 @@ public class ProdutoDAO {
             pst.setBigDecimal(3, produto.getPreco());
             pst.setInt(4, produto.getPromocao());
             pst.executeUpdate();
-        } catch (SQLException e) {
+        } catch (Exception e) {
             e.printStackTrace();
             System.out.println("Erro ao executar o Statment " + e.toString());
         }
@@ -49,44 +49,11 @@ public class ProdutoDAO {
                 p.add(produto);
             }
 
-        } catch (SQLException e) {
+        } catch (Exception e) {
             System.out.println("Erro ao executar o Statement" + e.toString());
         }
 
         return p;
     }
     
-    public void inserirTeste() {
-        try (Connection conn = new CNXJDBC().conectar();
-             PreparedStatement pst = conn.prepareStatement(SQL_INSERE_TESTE);) {
-            pst.setString(1, "AA");
-            pst.setInt(2, 10);
-            pst.executeUpdate();
-        } catch (SQLException e) {
-            e.printStackTrace();
-            System.out.println("Erro ao executar o Statment " + e.toString());
-        }
-    }
-
-    public ArrayList<Teste> listarTodosTeste() {
-        ArrayList<Teste> p = new ArrayList<Teste>();
-
-        Teste produto;
-        try (Connection conn = new CNXJDBC().conectar();
-             PreparedStatement pst = conn.prepareStatement(SQL_SELECIONA_CONTATO);
-             ResultSet rs = pst.executeQuery();) {
-
-            while (rs.next()) {
-                produto = new Teste();
-                produto.setNome(rs.getString("NOME"));
-                produto.setIdade(Integer.parseInt(rs.getString("IDADE")));
-                p.add(produto);
-            }
-
-        } catch (SQLException e) {
-            System.out.println("Erro ao executar o Statement" + e.toString());
-        }
-
-        return p;
-    }
 }
