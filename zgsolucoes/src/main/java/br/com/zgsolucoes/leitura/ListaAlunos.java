@@ -11,9 +11,7 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlElementWrapper;
 import java.util.List;
 
-/**
- * Classe de objetos Lista de Alunos.
- */
+
 @XmlAccessorType(XmlAccessType.FIELD)
 public class ListaAlunos {
 
@@ -22,7 +20,7 @@ public class ListaAlunos {
     private List<Aluno> alunos;
 
     /**
-     * Método responsável por dar acesso ao ArrayList alunos.
+     * Mï¿½todo responsï¿½vel por dar acesso ao ArrayList alunos.
      * @return ArrayList de alunos.
      */
     public List<Aluno> getListaAlunos() {
@@ -30,7 +28,7 @@ public class ListaAlunos {
     }
 
     /**
-     * Método de acesso ao ArrayList alunos.
+     * Mï¿½todo de acesso ao ArrayList alunos.
      */
     public void setListaAlunos(Aluno aluno) {
         this.alunos.add(aluno);

@@ -7,9 +7,7 @@ import java.util.List;
 /*
 public class CaixaTest {
 
-    DescontoProdutoA descontoProdutoA = new DescontoProdutoA();
-    DescontoProdutoB descontoProdutoB = new DescontoProdutoB();
-    DescontoProdutoC descontoProdutoC = new DescontoProdutoC();
+
 
     Produto produtoA = new Produto("A", 50, descontoProdutoA);
     Produto produtoB = new Produto("B", 30, descontoProdutoB);

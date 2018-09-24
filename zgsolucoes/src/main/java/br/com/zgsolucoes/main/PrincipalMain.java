@@ -2,6 +2,7 @@ package br.com.zgsolucoes.main;
 
 import br.com.zgsolucoes.Bootstrap;
 import br.com.zgsolucoes.entidades.PromocaoNovo;
+import br.com.zgsolucoes.leitura.ManterCsv;
 import br.com.zgsolucoes.persistencia.ProdutoDAO;
 import br.com.zgsolucoes.persistencia.PromocaoDAO;
 import br.com.zgsolucoes.leitura.Regex;
@@ -19,17 +20,7 @@ import javax.xml.bind.JAXBException;
 public class PrincipalMain {
     public static void main(String[] args) throws IOException {
 
-        ProdutoDAO teste = new ProdutoDAO();
-        PromocaoDAO promo = new PromocaoDAO();
-        Bootstrap b = new Bootstrap();
-
-        Regex regex = new Regex();
-
-        //b.criarTabelaProduto();
-
-        String[] arquivo = new String[50];
-        arquivo = regex.lerArquivo("Arquivo_dados_checkout.txt");
-
+        Bootstrap bootstrap = new Bootstrap();
+        bootstrap.inicializa();
     }
- 
 }

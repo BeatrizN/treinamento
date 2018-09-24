@@ -20,11 +20,11 @@ public class TesteMain {
 
         ProdutoDAO teste = new ProdutoDAO();
         PromocaoDAO promo = new PromocaoDAO();
-        Bootstrap b = new Bootstrap();
+        Bootstrap bootstrap = new Bootstrap();
+
+        bootstrap.inicializa();
 
         Regex regex = new Regex();
-
-        //b.criarTabelaProduto();
 
         String[] arquivo = new String[50];
         arquivo = regex.lerArquivo("Arquivo_dados_checkout.txt");
@@ -54,19 +54,6 @@ public class TesteMain {
 //            System.out.println(ppp.get(i).getPromocao());
 //            System.out.println("\n");
 //        }
-
-
-        //Produto pp = new Produto(9, "AAA", new BigDecimal(3.9860), 1);
-        //teste.inserirProduto(pp);
-//        Produto aaa = new Produto();
-//        aaa = teste.listarTodosProduto().get(1);
-//        System.out.println(aaa.getId() +" - "+ aaa.getDescricao()+" - "+ aaa.getPreco()+" - "+ aaa.getPromocao());
-
-        //b.criarTabelaPromocao();
-//        PromocaoNovo promocao = new PromocaoNovo(2, "ABB", "CCCC", new BigDecimal(1), new BigDecimal(1),new BigDecimal(1));
-//        promo.inserirPromocao(promocao);
-//        PromocaoNovo aba = promo.listarTodosPromocao().get(1);
-//        System.out.println(aba.getId() +" - "+ aba.getDescricao());
 
     }
 }

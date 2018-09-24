@@ -1,11 +1,13 @@
 package br.com.zgsolucoes.entidades;
 
+import java.math.BigDecimal;
 import java.util.*;
 
 public class Caixa {
 
     List<Item> itens = new ArrayList<Item>();
     Produtos produtos = new Produtos();
+    Promocoes promocoes = new Promocoes();
 
     public void adicionarProdutoCarrinho(String produto) {
 
@@ -37,24 +39,42 @@ public class Caixa {
         }
     }
 
-    public int getTotalPrice() {
-        int valorTotal = 0;
+    public BigDecimal getTotalPrice() {
+        BigDecimal valorTotal = new BigDecimal(0);
 
         for(Item item : itens) {
-           // valorTotal += item.getQuantidade() * item.getProduto().getPreco(); ****
+            BigDecimal quantidade = new BigDecimal(item.getQuantidade());
+            BigDecimal temporario = quantidade.multiply(item.getProduto().getPreco());
+            valorTotal = valorTotal.add(temporario);
         }
-
-        valorTotal = valorTotal - getTotalDiscount();
 
         return valorTotal;
     }
 
-    public int getTotalDiscount() {
+    public BigDecimal getTotalDiscount() {
 
-        int desconto = 0;
+        BigDecimal desconto = new BigDecimal(0);
 
         for (Item item : itens) {
-            //desconto += item.getProduto().getPromocao().ativarPromocao(item.getProduto(), item.getQuantidade());
+            PromocaoNovo promocao = promocoes.getPromocoes(Integer.toString(item.getProduto().getPromocao()));
+            BigDecimal temporario = ativarPromocao(item.getProduto(), item.getQuantidade(), promocao, desconto);
+            desconto = desconto.add(temporario);
+        }
+
+        return desconto;
+    }
+
+    public BigDecimal ativarPromocao(Produto produto, int quantidade, PromocaoNovo promocao, BigDecimal desconto) {
+        int qAtiva = Integer.valueOf(promocao.getQuantidade_ativacao().toString());
+        int q = quantidade/qAtiva;
+        BigDecimal quanti = new BigDecimal(q);
+
+        if(promocao.getQuantidade_paga() != new BigDecimal(0)){
+            BigDecimal temporario = quanti.multiply(produto.getPreco());
+            desconto = desconto.add(temporario);
+        } else {
+            BigDecimal total = quanti.multiply(produto.getPreco());
+            desconto = total.subtract(promocao.getPreco_final());
         }
 
         return desconto;

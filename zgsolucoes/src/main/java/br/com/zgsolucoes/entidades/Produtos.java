@@ -1,13 +1,18 @@
 package br.com.zgsolucoes.entidades;
 
+import br.com.zgsolucoes.persistencia.ProdutoDAO;
+import br.com.zgsolucoes.persistencia.PromocaoDAO;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class Produtos {
 
     private List<Produto> produtos = new ArrayList<Produto>();
+    ProdutoDAO dao = new ProdutoDAO();
 
     public Produtos() {
+        this.produtos = dao.listarTodosProduto();
     }
 
     public Produtos(List<Produto> produtos) {
